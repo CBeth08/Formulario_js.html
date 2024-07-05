@@ -6,12 +6,12 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
+    border: 1px solid #f3c9f7;
+    border-radius: 2px;
+    background-color: #dcd5dd;
 }
 
 h1 {
@@ -24,16 +24,19 @@ h1 {
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 input[type="text"],
+input[type="apellido"],
+input[type="cedula"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"],
+input[type="direccion"] {
     width: 100%;
-    padding: 8px;
+    padding: 4px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 button {
@@ -43,10 +46,12 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    
 }
 
 button:hover {
     background-color: #0056b3;
+
 }
 
 #mensaje {
