@@ -1,19 +1,24 @@
-document.getElementById('cliente-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
+const script= document.querySelector('#script')
+script.addEventListener('submit', (e)=>{
+    e.preventDefault()
     // Obtener los valores de los campos del formulario
-    var nombre = document.getElementById('nombre').value;
-    var email = document.getElementById('email').value;
-    var telefono = document.getElementById('telefono').value;
-
-    // Crear un mensaje con los datos ingresados por el usuario
-    var mensaje = `Cliente registrado:<br>
-                   Nombre: ${nombre}<br>
-                   Correo electrónico: ${email}<br>`;
-    if (telefono) {
-        mensaje += Teléfono: ${telefono};
+    const nombre = document.querySelector('#nombre').value
+    const apellido = document.querySelector('#apellido').value
+    const cedula = document.querySelector('#cedula').value
+    const email = document.querySelector('#email').value
+    const telefono = document.querySelector('#telefono').value
+    const direccion = document.querySelector('#direccion').value
+    
+    const Cliente= JSON.parse(localStorage.getItem('Cliente')) || []
+    const isClienteRegistered = Cliente.find(Cliente => Cliente.cedula === cedula)
+    if (isClienteRegistered){
+        return alert('El cliente ya esta registrado')
     }
 
-    // Mostrar el mensaje en el div de mensaje
-    document.getElementById('mensaje').innerHTML = mensaje;
-});
+    isClienteRegistered.push((nombre: nombre, apellido: apellido, cedula:  cedula, email: email,
+    telefono: telefono, direccion: direccion ))
+    localStorage.setItem('Cliente', JSON.stringify(Cliente))
+    alert('Registro Existoso')
+    window.location.href = 'index.html' 
+
+})
